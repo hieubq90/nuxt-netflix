@@ -12,3 +12,35 @@ input:-webkit-autofill:focus {
 input:-internal-autofill-selected {
   background-color: transparent !important;
 }
+
+.transparent-table {
+  @apply backdrop-blur-xl;
+  color: white !important;
+  border: thin solid rgba(255, 255, 255, .8) !important;
+  border-radius: 8px !important;
+
+  header.v-toolbar {
+    @apply bg-transparent;
+    border-radius: 8px 8px 0 0;
+    border-bottom: thin solid rgba(255, 255, 255, .8) !important;
+    .v-toolbar-title {
+      @apply text-white uppercase;
+    }
+  }
+  .v-table__wrapper {
+    th {
+      background-color: transparent !important;
+      color: white !important;
+      border-bottom: thin solid rgba(255, 255, 255, .8) !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+    }
+
+    td {
+      background-color: transparent !important;
+      color: white !important;
+      border-bottom: thin solid rgba(255, 255, 255, .4) !important;
+    }
+  }
+  
+}

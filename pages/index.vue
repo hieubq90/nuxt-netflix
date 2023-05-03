@@ -1,9 +1,15 @@
 <script setup lang="ts">
-const online = useOnline()
+const router = useRouter()
+
+onMounted(() => {
+  setTimeout(() => {
+    router.push('browse')
+  }, 500)
+})
 </script>
 
 <template>
-  <div>
+  <!-- <div>
     <Logos mb-6 />
     <Suspense>
       <ClientOnly>
@@ -19,5 +25,13 @@ const online = useOnline()
       </template>
     </Suspense>
     <InputEntry />
+  </div> -->
+  <div class="min-h-screen w-full flex items-center justify-center">
+    <v-progress-circular
+      color="blue-lighten-3"
+      indeterminate
+      :size="128"
+      :width="12"
+    />
   </div>
 </template>

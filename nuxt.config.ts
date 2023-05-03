@@ -33,7 +33,7 @@ export default defineNuxtConfig({
         moduleOptions: {
           /* nuxt-vuetify module options */
           treeshaking: true,
-          useIconCDN: false,
+          useIconCDN: true,
           /* vite-plugin-vuetify options */
           styles: 'sass',
           autoImport: true,
@@ -101,6 +101,7 @@ export default defineNuxtConfig({
         { name: 'description', content: appDescription },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
       ],
+      title: 'My Netflix',
     },
   },
 

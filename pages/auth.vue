@@ -4,7 +4,12 @@ import { Field, Form } from 'vee-validate'
 import { toast } from 'vue3-toastify'
 import TextFieldWithValidation from '~/components/inputs/TextFieldWithValidation.vue'
 
+useHead({
+  title: 'Đăng nhập - My Netflix',
+})
+
 definePageMeta({
+  middleware: 'auth',
   layout: 'auth',
 })
 
