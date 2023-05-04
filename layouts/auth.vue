@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen w-screen">
     <div
-      class="relative h-full w-full bg-[url(images/hero.jpg)] bg-cover bg-fixed bg-center bg-no-repeat"
+      class="relative h-full w-full bg-[url(/images/hero.jpg)] bg-cover bg-fixed bg-center bg-no-repeat"
     >
       <div
         class="h-full w-full"

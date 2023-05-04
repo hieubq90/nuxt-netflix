@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-screen w-screen bg-[url(images/hero.jpg)] bg-cover bg-fixed bg-center bg-no-repeat">
+  <div class="relative h-screen w-screen bg-[url(/images/hero.jpg)] bg-cover bg-fixed bg-center bg-no-repeat">
     <v-layout>
       <v-navigation-drawer
         class="backdrop-blur-lg"
