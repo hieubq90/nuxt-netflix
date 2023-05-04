@@ -22,7 +22,7 @@ const loading = ref(false)
 const schema = computed(() => {
   if (variant.value === 'login') {
     return yup.object({
-      email: yup.string().email().required('Email là bắt buộc').label('Email'),
+      email: yup.string().email('Email không đúng định dạng').required('Email là bắt buộc').label('Email'),
       password: yup
         .string()
         .min(6, 'Mật khẩu cần tối thiểu 6 ký tự')
@@ -32,7 +32,7 @@ const schema = computed(() => {
   }
   return yup.object({
     name: yup.string().required('Họ tên là bắt buộc').label('Họ vầ tên'),
-    email: yup.string().required('Email là bắt buộc').email('Email không đúng định dạng').label('Email'),
+    email: yup.string().email('Email không đúng định dạng').required('Email là bắt buộc').label('Email'),
     password: yup
       .string()
       .min(6, 'Mật khẩu cần tối thiểu 6 ký tự')
@@ -104,7 +104,8 @@ async function onSubmit(values: any) {
   </nav>
   <div class="flex justify-center">
     <div
-      class="mt-2 w-full self-center rounded-md bg-black bg-opacity-70 px-16 py-16 lg:max-w-md lg:w-2/5"
+      class="mt-2 w-full self-center rounded-md px-16 py-16 text-white lg:max-w-md lg:w-2/5"
+      un-bg="black opacity-70"
     >
       <h2
         class="mb-8 text-center text-4xl font-semibold uppercase text-white"
@@ -135,7 +136,7 @@ async function onSubmit(values: any) {
           />
 
           <div class="flex flex-row justify-center">
-            <v-btn color="info" class="mr-4" type="submit" :loading="loading" :disabled="loading">
+            <v-btn color="error" class="mx-4 mr-4 w-full" type="submit" :loading="loading" :disabled="loading">
               {{ variant === 'login' ? 'Đăng nhập' : 'Đăng ký' }}
             </v-btn>
           </div>
