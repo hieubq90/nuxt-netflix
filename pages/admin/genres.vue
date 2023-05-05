@@ -1,11 +1,9 @@
 <script lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
-import ConfirmModal from '~/components/modals/ConfirmModal'
 
 export default {
   components: {
     VDataTable,
-    ConfirmModal,
   },
 }
 </script>
@@ -93,6 +91,6 @@ onMounted(() => {
         </v-icon>
       </template>
     </VDataTable>
-    <ConfirmModal :show="confirmDelete" title="Xoá thể loại" message="Bạn có chắc chắn muốn xoá bản ghi này" icon-color="red" @cancel="confirmDelete = false" @submit="confirmDelete = false" />
+    <ModalConfirm :show="confirmDelete" title="Xoá thể loại" message="Bạn có chắc chắn muốn xoá bản ghi này" icon-color="red" @cancel="confirmDelete = false" @submit="confirmDelete = false" />
   </div>
 </template>

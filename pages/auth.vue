@@ -2,7 +2,6 @@
 import * as yup from 'yup'
 import { Field, Form } from 'vee-validate'
 import { toast } from 'vue3-toastify'
-import TextFieldWithValidation from '~/components/inputs/TextFieldWithValidation.vue'
 
 useHead({
   title: 'Đăng nhập - My Netflix',
@@ -120,13 +119,13 @@ async function onSubmit(values: any) {
           </Field>
 
           <!-- This uses a custom component with the composition API -->
-          <TextFieldWithValidation name="email" label="Email" type="email" class="mt-1" variant="underlined" />
+          <InputTextFieldWithValidation name="email" label="Email" type="email" class="mt-1" variant="underlined" />
 
           <!-- This uses a custom component with the composition API -->
-          <TextFieldWithValidation name="password" label="Mật khẩu" type="password" class="mt-1" variant="underlined" />
+          <InputTextFieldWithValidation name="password" label="Mật khẩu" type="password" class="mt-1" variant="underlined" />
 
           <!-- This uses a custom component with the composition API -->
-          <TextFieldWithValidation
+          <InputTextFieldWithValidation
             v-if="variant !== 'login'"
             class="mt-1"
             name="passwordConfirm"
