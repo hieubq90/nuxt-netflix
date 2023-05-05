@@ -35,7 +35,7 @@
           Quản trị viên
         </v-app-bar-title>
         <template #append>
-          <v-avatar color="white" class="mr-4 cursor-pointer">
+          <v-avatar color="white" class="mr-2 cursor-pointer">
             <span class="text-h5">CJ</span>
           </v-avatar>
         </template>
@@ -43,7 +43,7 @@
 
       <v-main>
         <v-container
-          class="d-flex justify-center pr-8"
+          class="d-flex justify-center pr-4"
           style="minHeight: calc(100vh - 112px); maxHeight: calc(100vh - 112px);"
         >
           <slot />

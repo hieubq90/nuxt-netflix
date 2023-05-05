@@ -1,9 +1,11 @@
 <script lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
+import ConfirmModal from '~/components/modals/ConfirmModal'
 
 export default {
   components: {
     VDataTable,
+    ConfirmModal,
   },
 }
 </script>
@@ -31,6 +33,7 @@ const headers = [
 ]
 const genres = ref([])
 const loading = ref(true)
+const confirmDelete = ref(false)
 
 async function loadGenres() {
   loading.value = true
@@ -84,10 +87,12 @@ onMounted(() => {
         </v-icon>
         <v-icon
           size="small"
+          @click="confirmDelete = true"
         >
           mdi-delete
         </v-icon>
       </template>
     </VDataTable>
+    <ConfirmModal :show="confirmDelete" title="Xoá thể loại" message="Bạn có chắc chắn muốn xoá bản ghi này" icon-color="red" @cancel="confirmDelete = false" @submit="confirmDelete = false" />
   </div>
 </template>

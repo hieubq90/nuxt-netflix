@@ -113,7 +113,7 @@ async function onSubmit(values: any) {
         {{ variant === 'login' ? 'Đăng nhập' : 'Đăng ký' }}
       </h2>
       <Form v-slot="{ handleSubmit }" :validation-schema="schema">
-        <v-form @submit.prevent="(e) => handleSubmit(e, onSubmit)">
+        <v-form @submit.prevent="(e: any) => handleSubmit(e, onSubmit)">
           <!-- This method uses Higher-order component API to validate vuetify inputs -->
           <Field v-if="variant !== 'login'" v-slot="{ field, errors }" name="name">
             <v-text-field v-bind="field" label="Họ và tên" :error-messages="errors" variant="underlined" />
