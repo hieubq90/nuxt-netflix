@@ -21,5 +21,5 @@ const { value, handleBlur, errors } = useField(toRef(props, 'name'), undefined)
 </script>
 
 <template>
-  <v-text-field v-model="value" :label="label" :error-messages="errors" :type="type" @blur="handleBlur" />
+  <v-text-field v-model="value" v-bind="$attrs" :label="label" :error-messages="errors" :type="type" @blur="handleBlur" />
 </template>

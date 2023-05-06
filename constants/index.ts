@@ -1,2 +1,2 @@
-export const appName = 'Vitesse for Nuxt 3'
-export const appDescription = 'Vitesse for Nuxt 3'
+export const appName = 'Nuxt Netflix Clone'
+export const appDescription = 'Nuxt Netflix Cloned With Nuxt3'

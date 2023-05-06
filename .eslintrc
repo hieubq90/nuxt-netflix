@@ -2,5 +2,13 @@
   "extends": [
     "@antfu",
     "@unocss"
-  ]
+  ],
+  "rules": {
+    "vue/valid-v-slot": [
+      "warn",
+      {
+        "allowModifiers": true
+      }
+    ]
+  }
 }

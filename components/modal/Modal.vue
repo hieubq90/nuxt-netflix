@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { type ObjectSchema } from 'yup'
+import { Form } from 'vee-validate'
 
 interface Props {
   show?: boolean
   title?: string
   schema?: ObjectSchema<any>
+  initialValue?: any
   isForm?: boolean
   cancelText?: string
   submitText?: string
@@ -39,12 +41,13 @@ function onSubmit(data?: any) {
     scrollable
     persistent
     width="auto"
+    min-width="500"
     v-bind="$attrs"
   >
-    <template v-if="props.isForm">
-      <Form v-slot="{ handleSubmit }" :validation-schema="props.schema">
-        <v-form @submit.prevent="(e: any) => handleSubmit(e, onSubmit)">
-          <v-card>
+    <div class="w-full">
+      <Form v-if="props.isForm" v-slot="{ handleSubmit, errors }" class="w-full" :validation-schema="props.schema" :initial-values="props.initialValue">
+        <v-form class="w-full" @submit.prevent="(e: any) => handleSubmit(e, onSubmit)">
+          <v-card class="w-full" :elevation="2">
             <!-- Title -->
             <v-card-title v-if="props.title">
               {{ props.title }}
@@ -60,12 +63,16 @@ function onSubmit(data?: any) {
             <v-card-actions>
               <v-spacer />
               <v-btn
+                variant="flat"
                 @click="onCancel"
               >
                 {{ props.cancelText }}
               </v-btn>
               <v-btn
+                variant="flat"
                 type="submit"
+                :color="props.submitColor"
+                :disabled="Object.keys(errors).length > 0"
               >
                 {{ props.submitText }}
               </v-btn>
@@ -73,9 +80,7 @@ function onSubmit(data?: any) {
           </v-card>
         </v-form>
       </Form>
-    </template>
-    <template v-else>
-      <v-card :elevation="2">
+      <v-card v-else :elevation="2">
         <v-card-title v-if="props.title">
           {{ props.title }}
         </v-card-title>
@@ -106,6 +111,6 @@ function onSubmit(data?: any) {
           </v-btn>
         </v-card-actions>
       </v-card>
-    </template>
+    </div>
   </v-dialog>
 </template>
