@@ -55,11 +55,12 @@ function onSubmit(data?: any) {
             <v-divider v-if="props.title" />
 
             <!-- form body -->
-            <v-card-text>
+            <v-card-text style="max-height: 500px; overflow-y: auto;">
               <slot />
             </v-card-text>
 
             <!-- actions -->
+            <v-divider v-if="props.title" />
             <v-card-actions>
               <v-spacer />
               <v-btn
@@ -87,7 +88,7 @@ function onSubmit(data?: any) {
         <v-divider v-if="props.title" />
 
         <!-- modal body -->
-        <v-card-text>
+        <v-card-text style="height: 500px; overflow-y: auto;">
           <slot />
         </v-card-text>
         <v-divider v-if="props.title" />

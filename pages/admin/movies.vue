@@ -10,5 +10,5 @@ definePageMeta({
 </script>
 
 <template>
-  <div>MOVIES</div>
+  <NuxtPage />
 </template>

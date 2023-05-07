@@ -9,6 +9,7 @@
       {
         "allowModifiers": true
       }
-    ]
+    ],
+    "vue/v-on-event-hyphenation": "off"
   }
 }

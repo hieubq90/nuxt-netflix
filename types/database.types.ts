@@ -12,6 +12,22 @@ export interface Genre {
   created_at: number | null
 }
 
+export interface Movie {
+  id: string
+  title?: string | null
+  desc?: string | null
+  trailer_host?: string | null
+  trailer_source?: string | null
+  trailer_url?: string | null
+  thumbnail_url?: string | null
+  release?: number | null
+  release_full?: boolean | null
+  rate?: number | null
+  rate_count?: number | null
+  genre_ids?: string[] | null
+  one_shot?: boolean | null
+}
+
 export interface Database {
   public: {
     Tables: {
@@ -26,6 +42,47 @@ export interface Database {
         }
         Update: {
           name: string
+        }
+      }
+      movies: {
+        Row: {
+          id: string
+          title?: string | null
+          desc?: string | null
+          trailer_host?: string | null
+          trailer_source?: string | null
+          thumbnail_url?: string | null
+          release?: number | null
+          release_full?: boolean | null
+          rate?: number | null
+          rate_count?: number | null
+          genre_ids?: string[] | null
+          one_shot?: boolean | null
+        }
+        Insert: {
+          title?: string | null
+          desc?: string | null
+          trailer_host?: string | null
+          trailer_source?: string | null
+          thumbnail_url?: string | null
+          release?: number | null
+          release_full?: boolean | null
+          genre_ids?: string[] | null
+          one_shot?: boolean | null
+        }
+        Update: {
+          title?: string | null
+          desc?: string | null
+          trailer_host?: string | null
+          trailer_source?: string | null
+          trailer_url?: string | null
+          thumbnail_url?: string | null
+          release?: number | null
+          release_full?: boolean | null
+          rate?: number | null
+          rate_count?: number | null
+          genre_ids?: string[] | null
+          one_shot?: boolean | null
         }
       }
     }

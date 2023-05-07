@@ -62,13 +62,13 @@ async function loadGenres({ page, itemsPerPage, sortBy, search }: { page?: numbe
   genres.value = []
   const { data, error } = await client.from('genres').select('*')
   if (error) {
-    // loading.value = false
+    loading.value = false
     genres.value = []
   }
   else {
     genres.value = [...data]
     options.total = data.length
-    // loading.value = false
+    loading.value = false
   }
 }
 
@@ -101,7 +101,7 @@ async function updateGenre(genre: Genre) {
 }
 
 async function deleteGenre() {
-  if (!deletingItem) {
+  if (!deletingItem.value) {
     confirmDelete.value = false
     return
   }
@@ -128,7 +128,7 @@ async function handleSubmitForm(data: any) {
     return
   }
 
-  if (!editingItem)
+  if (!editingItem.value)
     addGenre(data)
 
   else
